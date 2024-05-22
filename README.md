@@ -85,8 +85,11 @@ To run the code in this repo, please follow the steps below.
 
 ## Model Predictions
 
+### ConvLSTM
+(e.g. left column is original image, right column is pred image)
 
-
+### GAN
+(e.g. left column is original image, right column is pred image)
 
 
 
