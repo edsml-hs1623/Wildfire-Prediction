@@ -77,7 +77,12 @@ To run the code in this repo, please follow the steps below.
 ![ConvLSTMModel](./ConvLSTMModel_Simplified.png)
 
 ### GAN
+
+**Generator:** 
+
 ![Generator](./Generator_final_model_Simplified.png)
+
+**Discriminator:** 
 
 ![Discriminator](./Discriminator_final_model_Simplified.png)
 
@@ -90,6 +95,18 @@ To run the code in this repo, please follow the steps below.
 
 ### GAN
 (e.g. left column is original image, right column is pred image)
+
+
+
+## DA
+
+### DA 
+
+
+
+### DA 
+
+
 
 
 
