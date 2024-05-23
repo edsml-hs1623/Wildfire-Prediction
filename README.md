@@ -104,13 +104,33 @@ To run the code in this repo, please follow the steps below.
 
 ### DA for ConvLSTM
 
-(e.g. add images include origin, pred and image after DA)
+#### Error Covariance Matrices
+
+- **Observation Error Covariance Matrix $R$: ** Computed using satellite observation data. This matrix represents the estimated errors inherent in the observational data, which help in adjusting the forecast during the data assimilation process.
+
+- **Background Error Covariance Matrix $B$: ** Calculated using data predicted by the ConvLSTM model. This matrix describes the uncertainties associated with the initial state forecast by the model, which is crucial for the correction step in data assimilation.
+
+
+
+Below are comparison images showing the observed data, the original predictions, the predictions after applying DA, and the error visualization between the sensor data and the predictions after DA:
+
+![LSTM_DA](./Images/LSTM_DA.png)
+
+
 
 ### DA for GAN
 
-(e.g. add images include origin, pred and image after DA)
+#### Error Covariance Matrices
+
+- **Observation Error Covariance Matrix $R$: ** Computed using satellite observation data. 
+
+- **Background Error Covariance Matrix $B$: ** Calculated using data predicted by the GAN model. 
 
 
+
+Below are comparison images showing the observed data, the original predictions, the predictions after applying DA, and the error visualization between the sensor data and the predictions after DA: 
+
+![GAN_DA](./Images/GAN_DA.png)
 
 
 ## Authors
