@@ -74,7 +74,7 @@ To run the code in this repo, please follow the steps below.
 
 ### ConvLSTM
 
-![ConvLSTMModel](./Images/ConvLSTMModel_Simplified.png)
+![ConvLSTMModel](./Images/ConvLSTMModel.png)
 
 ### GAN
 
