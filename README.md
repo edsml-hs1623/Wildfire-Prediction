@@ -98,15 +98,15 @@ To run the code in this repo, please follow the steps below.
 
 
 
-## DA
+## Data Assimilation
 
-### DA 
+### Data Assimilation for ConvLSTM
 
+(e.g. add images include origin, pred and image after DA)
 
+### Data Assimilation for GAN
 
-### DA 
-
-
+(e.g. add images include origin, pred and image after DA)
 
 
 
@@ -121,12 +121,6 @@ To run the code in this repo, please follow the steps below.
 - Hanson H Shen: [hanson.shen23@imperial.ac.uk](mailto:hanson.shen23@imperial.ac.uk)
 - Ruoqi Li: [ce.huang23@imperial.ac.uk](mailto:ce.huang23@imperial.ac.uk)
 - Yunnan Yang: [yunnan.yang23@imperial.ac.uk](mailto:yunnan.yang23@imperial.ac.uk)
-
-
-
-## Reference
-
-See the reference.md(add hyperlink) file.
 
 
 
