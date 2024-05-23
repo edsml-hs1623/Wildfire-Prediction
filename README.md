@@ -74,17 +74,17 @@ To run the code in this repo, please follow the steps below.
 
 ### ConvLSTM
 
-![ConvLSTMModel](./Images/ConvLSTMModel.png)
+![ConvLSTMModel](./Images/ConvLSTM_Model.png)
 
 ### GAN
 
 **Generator:** 
 
-![Generator](./Images/Generator_final_model.png)
+![Generator](./Images/Generator_Model.png)
 
 **Discriminator:** 
 
-![Discriminator](./Images/Discriminator_final_model.png)
+![Discriminator](./Images/Discriminator_Model.png)
 
 
 
