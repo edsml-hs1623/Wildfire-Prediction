@@ -106,9 +106,9 @@ To run the code in this repo, please follow the steps below.
 
 #### Error Covariance Matrices
 
-- **Observation Error Covariance Matrix $R$: ** Computed using satellite observation data. This matrix represents the estimated errors inherent in the observational data, which help in adjusting the forecast during the data assimilation process.
+- Observation Error Covariance Matrix $R$:  Computed using satellite observation data. This matrix represents the estimated errors inherent in the observational data, which help in adjusting the forecast during the data assimilation process.
 
-- **Background Error Covariance Matrix $B$: ** Calculated using data predicted by the ConvLSTM model. This matrix describes the uncertainties associated with the initial state forecast by the model, which is crucial for the correction step in data assimilation.
+- Background Error Covariance Matrix $B$:  Calculated using data predicted by the ConvLSTM model. This matrix describes the uncertainties associated with the initial state forecast by the model, which is crucial for the correction step in data assimilation.
 
 
 
@@ -122,9 +122,9 @@ Below are comparison images showing the observed data, the original predictions,
 
 #### Error Covariance Matrices
 
-- **Observation Error Covariance Matrix $R$: ** Computed using satellite observation data. 
+- Observation Error Covariance Matrix $R$:  Computed using satellite observation data. 
 
-- **Background Error Covariance Matrix $B$: ** Calculated using data predicted by the GAN model. 
+- Background Error Covariance Matrix $B$:  Calculated using data predicted by the GAN model. 
 
 
 
