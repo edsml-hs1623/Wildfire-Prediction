@@ -58,7 +58,7 @@ To run the code in this repo, please follow the steps below.
 ## Repository Structure
 
 - **models**:
-  - `ConvLSTM`: Contains the RNN models used for Objective 1.
+  - `ConvLSTM`: Contains the ConvLSTM models used for Objective 1.
   - `GAN`: Contains the Generative models used for Objective 2.
   
 - **notebooks**: 
@@ -102,11 +102,11 @@ To run the code in this repo, please follow the steps below.
 
 ## Data Assimilation
 
-### Data Assimilation for ConvLSTM
+### DA for ConvLSTM
 
 (e.g. add images include origin, pred and image after DA)
 
-### Data Assimilation for GAN
+### DA for GAN
 
 (e.g. add images include origin, pred and image after DA)
 
