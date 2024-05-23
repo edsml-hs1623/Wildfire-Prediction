@@ -57,17 +57,29 @@ To run the code in this repo, please follow the steps below.
 
 ## Repository Structure
 
-- **models**:
+- **Models** 
   - `ConvLSTM`: Contains the ConvLSTM models used for Objective 1.
   - `GAN`: Contains the Generative models used for Objective 2.
   
-- **notebooks**: 
-  - `Objective_1.ipynb`: Jupyter notebook for training and testing RNN models.
-  - `Objective_2.ipynb`: Jupyter notebook for training and testing Generative models.
-  - `Objective_3.ipynb`: Jupyter notebook for performing data assimilation.
+- **Notebooks** 
+  - `Objective_One.ipynb`: Jupyter notebook for training and testing ConvLSTM models.
+  - `Objective_Two.ipynb`: Jupyter notebook for training and testing Generative models.
+  - `Objective_Three.ipynb`: Jupyter notebook for performing data assimilation.
   
-- **tests**: 
-  
+- **Tests**
+  - `test_1.py`: Contains automated tests to validate the accuracy and performance of the functions and models used in Objective 1, primarily focusing on the ConvLSTM model.
+  - `test_2.py`: Includes tests for verifying the functionality and effectiveness of the Generative models employed in Objective 2.
+  - `test_3.py`: Features tests to ensure the correct implementation and results of data assimilation processes outlined in Objective 3.
+
+- **Images**
+  - Directory containing images and diagrams used in the documentation.
+
+- **Packages**
+  - `setup.py`: Setup script for installing the project as a package.
+  - `requirements.txt`: List all dependencies that need to be installed using pip to ensure the project runs correctly.
+
+- **License**
+  - `LICENSE`: The license file that specifies the permissions, limitations, and conditions under which the software can be used.
   
 
 ## Model Structure
@@ -196,6 +208,7 @@ ModuleNotFoundError: If you encounter a ModuleNotFoundError, ensure that you hav
 - Hanson Shen: [hanson.shen23@imperial.ac.uk](mailto:hanson.shen23@imperial.ac.uk)
 - Yunnan Yang: [yunnan.yang23@imperial.ac.uk](mailto:yunnan.yang23@imperial.ac.uk)
 
+![Group_photo](./Images/Group_photo.jpeg)
 
 
 ## License
