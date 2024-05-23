@@ -40,13 +40,13 @@ To run the code in this repo, please follow the steps below.
 
 1. Clone this repository: 
 
-   ```python
+   ```bash
    git clone https://github.com/ese-msc-2023/acds3-wildfire-rush.git 
    ```
 
 2. Run commands below to install necessary libraries: 
 
-   ```python
+   ```bash
    cd the-directory-name-where-the-repo-is
    pip install -r requirements.txt
    ```
@@ -137,6 +137,47 @@ Below are comparison images showing the observed data, the original predictions,
 Below are comparison images showing the observed data, the original predictions, the predictions after applying DA, and the error visualization between the sensor data and the predictions after DA: 
 
 ![GAN_DA](./Images/GAN_DA.png)
+
+## Tests
+
+To ensure the code is working correctly, you can run the provided tests. Follow the steps below to set up your testing environment and execute the tests.
+
+### Prerequisites
+
+Make sure you have all necessary dependencies installed. You can install them using the `requirements.txt` file:
+
+   ```bash
+  cd path/to/your/project
+  conda create --name wildfire python=3.10
+  pip install -r requirements.txt
+
+   ```
+
+### Running the Tests
+We use pytest as our testing framework. To run the tests, follow these steps:
+1. Navigate to the project directory:
+Ensure you are in the root directory of the project where the test folder is located.
+  ```bash
+  cd path/to/your/project
+
+  ```
+2. Activate the 'wildfire' environment
+```bash
+  conda activate wildfire
+  ```
+
+
+3. Run the tests:
+```bash
+  pytest test
+  ```
+  
+### Common Issues
+ModuleNotFoundError: If you encounter a ModuleNotFoundError, ensure that you have activated the correct virtual environment and all required packages are installed.
+  ```bash
+  conda activate wildfire
+  pip install -r requirements.txt
+  ```
 
 
 ## Authors
