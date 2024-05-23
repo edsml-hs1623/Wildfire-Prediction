@@ -128,4 +128,4 @@ To run the code in this repo, please follow the steps below.
 
 ## License
 
-Please find the MIT License for this repository here(add hyperlink). 
+Please find the MIT License for this repository [here](https://github.com/ese-msc-2023/acds3-wildfire-rush/blob/main/Licence).
