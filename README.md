@@ -70,7 +70,7 @@ To run the code in this repo, please follow the steps below.
   
   
 
-## Models
+## Model Structure
 
 ### ConvLSTM
 
@@ -91,9 +91,15 @@ To run the code in this repo, please follow the steps below.
 ## Model Predictions
 
 ### ConvLSTM
+
+The image below shows a comparison between the original data and the predictions made by the ConvLSTM model. This visualization helps to highlight the model's accuracy and capability in predicting wildfire behaviour.
+
 ![ConvLSTM_Predictions](./Images/ConvLSTM_Predictions.jpg)
 
 ### GAN
+
+The following images display the training results and predictions from GAN model. These comparisons demonstrate how the GAN model captures and replicates the complex patterns of wildfire data, providing a visual assessment of its predictive performance. 
+
 ![GAN_Training_images](./Images/GAN_Training_images.png)
 
 ![GAN_Pred_images](./Images/GAN_Pred_images.png)
@@ -110,7 +116,7 @@ To run the code in this repo, please follow the steps below.
 
 - Background Error Covariance Matrix $B$:  Calculated using data predicted by the ConvLSTM model. This matrix describes the uncertainties associated with the initial state forecast by the model, which is crucial for the correction step in data assimilation.
 
-
+#### Model and Data Assimilation Visualization
 
 Below are comparison images showing the observed data, the original predictions, the predictions after applying DA, and the error visualization between the sensor data and the predictions after DA:
 
@@ -126,7 +132,7 @@ Below are comparison images showing the observed data, the original predictions,
 
 - Background Error Covariance Matrix $B$:  Calculated using data predicted by the GAN model. 
 
-
+#### Model and Data Assimilation Visualization
 
 Below are comparison images showing the observed data, the original predictions, the predictions after applying DA, and the error visualization between the sensor data and the predictions after DA: 
 
