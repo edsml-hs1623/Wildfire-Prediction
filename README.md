@@ -94,7 +94,9 @@ To run the code in this repo, please follow the steps below.
 ![ConvLSTM_Predictions](./Images/ConvLSTM_Predictions.jpg)
 
 ### GAN
-(e.g. left column is original image, right column is pred image)
+![GAN_Training_images](./Images/GAN_Training_images.png)
+
+![GAN_Pred_images](./Images/GAN_Pred_images.png)
 
 
 
