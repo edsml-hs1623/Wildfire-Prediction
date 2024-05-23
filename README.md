@@ -19,18 +19,18 @@ This project aims to develop a comprehensive system to predict wildfire behavior
 ## Objectives and Tasks
 
 ### Objective 1: Surrogate Model using RNN
-- **Task 1**: Train an RNN (preferably LSTM) using `Ferguson_fire_train` and test using `Ferguson_fire_test`.
-- **Task 2**: Use the RNN model with `Ferguson_fire_background` to make forecasts.
-- **Task 3**: Compare forecasted results with `Ferguson_fire_obs` and calculate the Mean Squared Error (MSE).
+- **Step 1**: Train an RNN (preferably LSTM) using `Ferguson_fire_train` and test using `Ferguson_fire_test`.
+- **Step 2**: Use the RNN model with `Ferguson_fire_background` to make forecasts.
+- **Step 3**: Compare forecasted results with `Ferguson_fire_obs` and calculate the Mean Squared Error (MSE).
 
 ### Objective 2: Surrogate Model using Generative AI
-- **Task 1**: Train a generative model (suggested: Variational Autoencoder) with `Ferguson_fire_train` and test on `Ferguson_fire_test`.
-- **Task 2**: Make forecasts using the trained generative model.
-- **Task 3**: Compare forecasted results with `Ferguson_fire_obs` and calculate MSE.
+- **Step 1**: Train a generative model (suggested: Variational Autoencoder) with `Ferguson_fire_train` and test on `Ferguson_fire_test`.
+- **Step 2**: Make forecasts using the trained generative model.
+- **Step 3**: Compare forecasted results with `Ferguson_fire_obs` and calculate MSE.
 
 ### Objective 3: Correction using Data Assimilation
-- **Task 1**: Compute error covariance matrices for the background and satellite data, perform DA in a reduced space.
-- **Task 2**: Execute data assimilation using the results from the RNN and Generative models with `Ferguson_fire_obs` and `Ferguson_fire_background`, calculate MSE before and after DA.
+- **Step 1**: Compute error covariance matrices for the background and satellite data, perform DA in a reduced space.
+- **Step 2**: Execute data assimilation using the results from the RNN and Generative models with `Ferguson_fire_obs` and `Ferguson_fire_background`, calculate MSE before and after DA.
 
 
 
