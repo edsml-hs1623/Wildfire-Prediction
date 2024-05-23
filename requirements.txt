@@ -1,0 +1,11 @@
+livelossplot==0.5.5
+ipython==8.24.0
+numpy==1.22.4
+torch==1.12.0
+torchvision==0.13.0
+matplotlib==3.7.1
+scikit-learn==1.5.0
+scipy==1.13.1
+pandas==2.2.2
+pytest==8.2.1
+gdown==4.2.0
