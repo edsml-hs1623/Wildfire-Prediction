@@ -45,7 +45,7 @@ To run the code in this repository, please follow the steps below.
    cd the-directory-name-where-the-repo-is
    ```
 
-2. Download the necessary datasets: 
+2. Download the necessary files: 
    - [Ferguson_fire_train.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EXWfaCKGdupKjmjM-OT7_Q8B1ImRnWCp6UT-YCW0oOHcTA?e=L2wKYC)
    - [Ferguson_fire_test.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EVrPGPqX7-dEmu4DPWadwngBZN7MLau1XKL5hJnwDTf4Ag?e=QywXIq)
    - [Ferguson_fire_background.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EdKSgIONELRFtLdBEuoyX-4BoLSo0DgWWi3EbXETIYFHGw?e=Eks1v6)
@@ -58,7 +58,7 @@ To run the code in this repository, please follow the steps below.
    - [GAN_background_3.npy](https://drive.google.com/file/d/1-hFuYj-_Dfrfql3afT3Zo0vImXdwUrHr/view?usp=sharing)
    - [GAN_background_4.npy](https://drive.google.com/file/d/1oaoB1g35RWPcOF-SDfupIlyKyK9eVTp1/view?usp=sharing)
 
-3. Extract the downloaded datasets to directory
+3. Extract the downloaded files to directory
 
    ```bash
    ./Data
