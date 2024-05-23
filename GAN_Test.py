@@ -13,15 +13,35 @@ from sklearn.metrics import mean_squared_error
 
 # TESTING DATALOADER
 class NumpyDataset(Dataset):
-    """Dataset class for loading numpy data."""
+    """Dataset class for loading numpy data.
+
+    Attributes:
+        data (np.ndarray): The numpy array containing the dataset.
+        transform (callable, optional): Optional transform to be applied on a sample.
+    """
+
     def __init__(self, data_path, transform=None):
+        """
+        Args:
+            data_path (str): Path to the numpy data file.
+            transform (callable, optional): Optional transform to be applied on a sample.
+        """
+
         self.data = np.load(data_path).astype(np.float32)
         self.transform = transform
 
     def __len__(self):
+        """Returns the total number of samples in the dataset."""
         return len(self.data)
 
     def __getitem__(self, idx):
+        """
+        Args:
+            idx (int): Index of the sample to retrieve.
+
+        Returns:
+            torch.Tensor: The sample from the dataset at the given index.
+        """
         image = self.data[idx]
         image = torch.from_numpy(image)
         if self.transform:
@@ -30,8 +50,22 @@ class NumpyDataset(Dataset):
 
 
 class TestDataLoader(unittest.TestCase):
-    """Test suite for the DataLoader."""
+    """Test suite for the DataLoader.
+
+    Attributes:
+        batch_size (int): The batch size for the DataLoader.
+        dummy_train (np.ndarray): Dummy training data for testing.
+        dummy_test (np.ndarray): Dummy test data for testing.
+        transform (transforms.Compose): Transformations to apply to the data.
+        train_data (NumpyDataset): Training dataset.
+        test_data (NumpyDataset): Test dataset.
+        train_loader (DataLoader): DataLoader for the training dataset.
+        test_loader (DataLoader): DataLoader for the test dataset.
+    """
+
     def setUp(self):
+        """Sets up the test fixtures before each test method."""
+
         self.batch_size = 100
 
         # Create dummy data for testing
@@ -54,6 +88,8 @@ class TestDataLoader(unittest.TestCase):
         self.test_loader = DataLoader(self.test_data, self.batch_size, True)
 
     def test_train_loader(self):
+        """Tests the training DataLoader."""
+
         print("\n----------Testing Train Loader----------")
         for i, batch in enumerate(self.train_loader):
             self.assertEqual(
@@ -79,6 +115,8 @@ class TestDataLoader(unittest.TestCase):
                 break  # Test only the first batch to keep the test fast
 
     def test_test_loader(self):
+        """Tests the test DataLoader."""
+
         print("\n----------Testing Test Loader----------")
         for i, batch in enumerate(self.test_loader):
             self.assertEqual(
@@ -106,8 +144,23 @@ class TestDataLoader(unittest.TestCase):
 
 # TESTING GAN
 class Generator(nn.Module):
-    """Generator model for GAN."""
+    """Generator model for GAN.
+
+    This model generates images from random noise.
+
+    Attributes:
+        init_size (int): The initial size of the feature maps.
+        fc1 (nn.Linear): The first fully connected layer.
+        conv_blocks (nn.Sequential): The convolutional blocks for upsampling.
+    """
+
     def __init__(self, g_input_dim=100, g_output_dim=256):
+        """
+        Args:
+            g_input_dim (int): Dimension of the input noise vector.
+            g_output_dim (int): Dimension of the output image (assumed to be square).
+        """
+
         super().__init__()
         self.init_size = g_output_dim // 16
         self.fc1 = nn.Linear(g_input_dim, 128 * self.init_size ** 2)
@@ -127,6 +180,16 @@ class Generator(nn.Module):
         )
 
     def forward(self, x):
+        """
+        Forward pass of the generator.
+
+        Args:
+            x (torch.Tensor): Input noise tensor.
+
+        Returns:
+            torch.Tensor: Generated image.
+        """
+
         x = self.fc1(x)
         x = x.view(x.shape[0], 128, self.init_size, self.init_size)
         x = self.conv_blocks(x)
@@ -134,8 +197,22 @@ class Generator(nn.Module):
 
 
 class Discriminator(nn.Module):
-    """Discriminator model for GAN."""
+    """Discriminator model for GAN.
+
+    This model discriminates between real and fake images.
+
+    Attributes:
+        model (nn.Sequential): The convolutional layers for downsampling.
+        linear_input_size (int): The size of the input to the final linear layer.
+        adv_layer (nn.Sequential): The final linear layer for the adversarial output.
+    """
+
     def __init__(self, d_input_dim=256):
+        """
+        Args:
+            d_input_dim (int): Dimension of the input image (assumed to be square).
+        """
+
         super().__init__()
         self.model = nn.Sequential(
             spectral_norm(nn.Conv2d(1, 16, 3, 2, 1)),
@@ -160,6 +237,16 @@ class Discriminator(nn.Module):
             nn.Linear(self.linear_input_size, 1), nn.Sigmoid())
 
     def forward(self, x):
+        """
+        Forward pass of the discriminator.
+
+        Args:
+            x (torch.Tensor): Input image tensor.
+
+        Returns:
+            torch.Tensor: Probability that the input image is real.
+        """
+
         x = self.model(x)
         x = x.view(x.size(0), -1)
         x = self.adv_layer(x)
@@ -167,8 +254,24 @@ class Discriminator(nn.Module):
 
 
 class TestGAN(unittest.TestCase):
-    """Test suite for the GAN."""
+    """Test suite for the GAN.
+
+    This class tests the functionality of the Generator and Discriminator models,
+    as well as the mean squared error calculation and image visualization.
+
+    Attributes:
+        batch_size (int): The number of samples per batch.
+        g_input_dim (int): Dimension of the input noise vector for the generator.
+        d_input_dim (int): Dimension of the input image for the discriminator.
+        generator (Generator): The Generator model.
+        discriminator (Discriminator): The Discriminator model.
+        transform (transforms.Compose): Transformations to be applied to the dataset.
+        test_data (NumpyDataset): The dataset used for testing.
+        test_loader (DataLoader): DataLoader for the test dataset.
+    """
+
     def setUp(self):
+        """Set up the test environment."""
         self.batch_size = 16
         self.g_input_dim = 100
         self.d_input_dim = 256
@@ -190,7 +293,16 @@ class TestGAN(unittest.TestCase):
     @staticmethod
     def visualize_generated_images(generator_model, 
                                    z_dim=100, num_images_to_generate=5):
-        """Generation of Images"""
+        """Generate and return images using the generator model.
+
+        Args:
+            generator_model (nn.Module): The generator model.
+            z_dim (int): Dimension of the input noise vector.
+            num_images_to_generate (int): Number of images to generate.
+
+        Returns:
+            torch.Tensor: Generated images.
+        """
 
         generator_model.eval()
 
@@ -202,6 +314,11 @@ class TestGAN(unittest.TestCase):
         return generated_images
 
     def test_generator(self):
+        """Test the generator model.
+
+        This method tests the output shape and functionality of the generator.
+        """
+
         print("\n-----------Testing Generator------------")
         noise = torch.randn(self.batch_size, self.g_input_dim)
         generated_data = self.generator(noise)
@@ -220,6 +337,11 @@ class TestGAN(unittest.TestCase):
             self.fail(f"Generator failed to run: {e}")
 
     def test_discriminator(self):
+        """Test the discriminator model.
+
+        This method tests the output shape and functionality of the discriminator.
+        """
+
         print("\n----------Testing Discriminator----------")
         images = torch.randn(
             self.batch_size, 1, self.d_input_dim, self.d_input_dim)
@@ -236,6 +358,11 @@ class TestGAN(unittest.TestCase):
             self.fail(f"Discriminator failed to run: {e}")
 
     def test_mse_calculation(self):
+        """Test the mean squared error (MSE) calculation.
+
+        This method tests the calculation of MSE between generated and real images.
+        """
+
         print("\n----------Testing MSE Calculation----------")
         self.generator.eval()  # Set the generator to evaluation mode
         mse_loss = nn.MSELoss()
@@ -260,6 +387,11 @@ class TestGAN(unittest.TestCase):
             print("Non-Negative: Passed")
 
     def test_visualize_generated_images(self):
+        """Test the visualization of generated images.
+
+        This method tests the functionality of the image visualization method.
+        """
+
         print("\n------------Testing Visualizing Generated Images------------")
         try:
             self.visualize_generated_images(self.generator)
@@ -270,7 +402,19 @@ class TestGAN(unittest.TestCase):
 
 # TESTING IMAGES CLEANING
 class TestImageProcessor(unittest.TestCase):
-    """Class for image processing."""
+    """Class for image processing.
+
+    This class includes methods for processing images, particularly for removing 
+    archipelagos (isolated regions) from binary images, and testing this functionality.
+
+    Methods:
+        remove_archipelagos(image, threshold=0.5, min_size=5, min_distance=90):
+            Removes archipelagos (isolated regions) from the given image based on 
+            specified parameters.
+
+        test_remove_archipelagos():
+            Tests the remove_archipelagos method with various cases.
+    """
 
     def remove_archipelagos(self, image,
                             threshold=0.5, min_size=5, min_distance=90):
@@ -286,6 +430,7 @@ class TestImageProcessor(unittest.TestCase):
         Returns:
         - The cleaned image with archipelagos removed.
         """
+
         # Step 1: Convert to binary image based on the threshold
         binary_image = image > threshold
 
@@ -328,6 +473,14 @@ class TestImageProcessor(unittest.TestCase):
         return cleaned_image
 
     def test_remove_archipelagos(self):
+        """
+        Test the remove_archipelagos method.
+
+        This method tests the functionality of remove_archipelagos with different cases:
+        - Test Case 1: Random sample image with archipelagos.
+        - Test Case 2: Empty sample image.
+        """
+
         print("\n----------- Testing Remove Archipelagos ------------")
         """Test Case 1: Random Sample Image"""
 
@@ -369,9 +522,36 @@ class TestImageProcessor(unittest.TestCase):
 
 # TESTING IMAGES SELECTION
 class TestImageSelection(unittest.TestCase):
-    """Test suite for the mse_calc function."""
+    """Test suite for the image selection function.
 
-    def image_selection(self, images_to_check, background_image):
+    This class includes methods for calculating mean squared error (MSE) values 
+    between images and selecting the best images based on these MSE values.
+
+    Methods:
+        mse_for_image_selection(images_to_check, background_image):
+            Calculates the MSE values between a set of images and a background image, 
+            and returns a sorted table of image indices and their corresponding MSE values.
+
+        test_image_selection():
+            Tests the image selection functionality with predefined sample images.
+    """
+
+    def mse_for_image_selection(self, images_to_check, background_image):
+        """
+        Calculate MSE values for image selection.
+
+        This function calculates the mean squared error (MSE) values between each 
+        image in the 'images_to_check' list and a background image, and returns a 
+        sorted table of image indices and their corresponding MSE values.
+
+        Parameters:
+        - images_to_check (List[np.ndarray]): List of images to check for selection.
+        - background_image (np.ndarray): Background image for comparison.
+
+        Returns:
+        - List[Tuple[int, float]]: Sorted table of image indices and their corresponding MSE values.
+        """
+
         mse_values = []
         mse_table = []
 
@@ -389,6 +569,14 @@ class TestImageSelection(unittest.TestCase):
         return mse_table
 
     def test_image_selection(self):
+        """
+        Test the image selection functionality.
+
+        This method tests the image selection functionality by calculating MSE values 
+        between sample images and a background image, and ensuring that the best images 
+        are selected based on these MSE values.
+        """
+
         print("\n-----------Testing Image Selection------------")
         # Create some sample images to check
         images_to_check = [
@@ -400,7 +588,8 @@ class TestImageSelection(unittest.TestCase):
             [[128, 128, 128], [128, 128, 128], [128, 128, 128]])
 
         # Calculate MSE values
-        mse_table = self.image_selection(images_to_check, background_image)
+        mse_table = self.mse_for_image_selection(
+            images_to_check, background_image)
 
         # Check if the MSE values are calculated correctly
         self.assertEqual(
