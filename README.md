@@ -80,11 +80,11 @@ To run the code in this repo, please follow the steps below.
 
 **Generator:** 
 
-![Generator](./Images/Generator_final_model_Simplified.png)
+![Generator](./Images/Generator_final_model.png)
 
 **Discriminator:** 
 
-![Discriminator](./Images/Discriminator_final_model_Simplified.png)
+![Discriminator](./Images/Discriminator_final_model.png)
 
 
 
