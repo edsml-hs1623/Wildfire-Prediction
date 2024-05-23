@@ -36,27 +36,35 @@ This project aims to develop a comprehensive system to predict wildfire behavior
 
 ## Getting Started
 
-To run the code in this repo, please follow the steps below. 
+To run the code in this repository, please follow the steps below. 
 
 1. Clone this repository: 
 
    ```bash
-   git clone https://github.com/ese-msc-2023/acds3-wildfire-rush.git 
+   git clone https://github.com/ese-msc-2023/acds3-wildfire-rush.git
+   cd the-directory-name-where-the-repo-is
    ```
 
-2. Download the necessary datasets from OneDrive:
+2. Download the necessary datasets from OneDrive: 
    - [filename](http://aaa)
+   - ...
 
 3. Extract the downloaded datasets to your project directory.
 
-4. Install the necessary libraries using the `requirements.txt` file: 
+4. Create and Activate a Virtual Environment
 
    ```bash
-   cd the-directory-name-where-the-repo-is
-   pip install -r requirements.txt
+   conda create --name wildfire python=3.10
+   conda activate wildfire
    ```
 
+5. Install Your Project
 
+   With your virtual environment activated, install your project and its dependencies using the `setup.py` file: 
+
+   ```bash
+   pip install .
+   ```
 
 
 
@@ -64,7 +72,7 @@ To run the code in this repo, please follow the steps below.
 
 - **Models** 
   - `ConvLSTM`: Contains the ConvLSTM models used for Objective 1.
-  - `GAN`: Contains the Generative models used for Objective 2.
+  - `DCGAN`: Contains the Generative models used for Objective 2.
   
 - **Notebooks** 
   - `Objective_One.ipynb`: Jupyter notebook for training and testing ConvLSTM models.
@@ -161,14 +169,9 @@ To ensure the code is working correctly, you can run the provided tests. Follow 
 
 ### Prerequisites
 
-Make sure you have all necessary dependencies installed. You can install them using the `requirements.txt` file:
+Make sure you have all necessary dependencies installed. Make sure the environment is activated.
 
-   ```bash
-  cd path/to/your/project
-  conda create --name wildfire python=3.10
-  pip install -r requirements.txt
 
-   ```
 
 ### Running the Tests
 We use pytest as our testing framework. To run the tests, follow these steps:
@@ -176,29 +179,36 @@ We use pytest as our testing framework. To run the tests, follow these steps:
 1. Navigate to the project directory: Ensure you are in the root directory of the project where the test folder is located: 
 
    ```bash
-     cd path/to/your/project
+   cd path/to/your/project
    ```
 
 2. Activate the 'wildfire' environment: 
 
    ```bash
-     conda activate wildfire
+   conda activate wildfire
    ```
 
 3. Run the tests: 
 
    ```bash
-     pytest test
+   pytest test
    ```
 
 
 
 ### Common Issues
-ModuleNotFoundError: If you encounter a ModuleNotFoundError, ensure that you have activated the correct virtual environment and all required packages are installed.
+`ModuleNotFoundError`: If you encounter a `ModuleNotFoundError`, ensure that you have activated the correct virtual environment and all required packages are installed.
+
   ```bash
   conda activate wildfire
   pip install -r requirements.txt
   ```
+
+
+
+## License
+
+Please find the MIT License for this repository [here](https://github.com/ese-msc-2023/acds3-wildfire-rush/blob/main/Licence).
 
 
 
@@ -215,7 +225,3 @@ ModuleNotFoundError: If you encounter a ModuleNotFoundError, ensure that you hav
 
 ![Group_photo](./Images/Group_photo.jpeg)
 
-
-## License
-
-Please find the MIT License for this repository [here](https://github.com/ese-msc-2023/acds3-wildfire-rush/blob/main/Licence).
