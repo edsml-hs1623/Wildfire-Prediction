@@ -45,11 +45,24 @@ To run the code in this repository, please follow the steps below.
    cd the-directory-name-where-the-repo-is
    ```
 
-2. Download the necessary datasets from OneDrive: 
-   - [filename](http://aaa)
-   - ...
+2. Download the necessary datasets: 
+   - [Ferguson_fire_train.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EXWfaCKGdupKjmjM-OT7_Q8B1ImRnWCp6UT-YCW0oOHcTA?e=L2wKYC)
+   - [Ferguson_fire_test.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EVrPGPqX7-dEmu4DPWadwngBZN7MLau1XKL5hJnwDTf4Ag?e=QywXIq)
+   - [Ferguson_fire_background.zip](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/EdKSgIONELRFtLdBEuoyX-4BoLSo0DgWWi3EbXETIYFHGw?e=Eks1v6)
+   - [Ferguson_fire_obs.npy](https://imperiallondon-my.sharepoint.com/:u:/g/personal/rarcucci_ic_ac_uk/ETERVdjpQ1BPrVLgu27TPawB5QgkpTGJ2_q3Z31qwBiYfg?e=CTvaSB)
+   - [LSTM_background.npy](https://drive.google.com/file/d/1uVvl4Gg9FwkSPKbu6Qr1jrECaPOsgiQk/view?usp=drive_link)
+   - [pca_final.pkl](https://drive.google.com/file/d/1A7MJkw-Jx6tbmJIpvaH911j3EkZNsqjT/view?usp=sharing)
+   - [GAN_background_0.npy](https://drive.google.com/file/d/1nJOVhGpv5mP8oj_riLBuIRP4XcvQR0wp/view?usp=sharing)
+   - [GAN_background_1.npy](https://drive.google.com/file/d/1-SfC6EMLxMx7ieqD8Jk1FRE3VRmQ9NVP/view?usp=sharing)
+   - [GAN_background_2.npy](https://drive.google.com/file/d/1DXTr9_xfll1xm25C5rb5BPeR1VzWnkiN/view?usp=sharing)
+   - [GAN_background_3.npy](https://drive.google.com/file/d/1-hFuYj-_Dfrfql3afT3Zo0vImXdwUrHr/view?usp=sharing)
+   - [GAN_background_4.npy](https://drive.google.com/file/d/1oaoB1g35RWPcOF-SDfupIlyKyK9eVTp1/view?usp=sharing)
 
-3. Extract the downloaded datasets to your project directory.
+3. Extract the downloaded datasets to directory
+
+   ```bash
+   ./Data
+   ```
 
 4. Create and Activate a Virtual Environment
 
