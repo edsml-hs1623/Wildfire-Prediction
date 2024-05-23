@@ -155,29 +155,34 @@ Make sure you have all necessary dependencies installed. You can install them us
 
 ### Running the Tests
 We use pytest as our testing framework. To run the tests, follow these steps:
-1. Navigate to the project directory:
-Ensure you are in the root directory of the project where the test folder is located.
-  ```bash
-  cd path/to/your/project
 
-  ```
-2. Activate the 'wildfire' environment
-```bash
-  conda activate wildfire
-  ```
+1. Navigate to the project directory: Ensure you are in the root directory of the project where the test folder is located: 
+
+   ```bash
+     cd path/to/your/project
+   ```
+
+2. Activate the 'wildfire' environment: 
+
+   ```bash
+     conda activate wildfire
+   ```
+
+3. Run the tests: 
+
+   ```bash
+     pytest test
+   ```
 
 
-3. Run the tests:
-```bash
-  pytest test
-  ```
-  
+
 ### Common Issues
 ModuleNotFoundError: If you encounter a ModuleNotFoundError, ensure that you have activated the correct virtual environment and all required packages are installed.
   ```bash
   conda activate wildfire
   pip install -r requirements.txt
   ```
+
 
 
 ## Authors
