@@ -74,24 +74,24 @@ To run the code in this repo, please follow the steps below.
 
 ### ConvLSTM
 
-![ConvLSTMModel](./ConvLSTMModel_Simplified.png)
+![ConvLSTMModel](./Images/ConvLSTMModel_Simplified.png)
 
 ### GAN
 
 **Generator:** 
 
-![Generator](./Generator_final_model_Simplified.png)
+![Generator](./Images/Generator_final_model_Simplified.png)
 
 **Discriminator:** 
 
-![Discriminator](./Discriminator_final_model_Simplified.png)
+![Discriminator](./Images/Discriminator_final_model_Simplified.png)
 
 
 
 ## Model Predictions
 
 ### ConvLSTM
-(e.g. left column is original image, right column is pred image)
+![ConvLSTM_Predictions](./Images/ConvLSTM_Predictions.jpg)
 
 ### GAN
 (e.g. left column is original image, right column is pred image)
