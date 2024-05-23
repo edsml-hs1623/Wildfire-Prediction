@@ -44,7 +44,12 @@ To run the code in this repo, please follow the steps below.
    git clone https://github.com/ese-msc-2023/acds3-wildfire-rush.git 
    ```
 
-2. Run commands below to install necessary libraries: 
+2. Download the necessary datasets from OneDrive:
+   - [filename](http://aaa)
+
+3. Extract the downloaded datasets to your project directory.
+
+4. Install the necessary libraries using the `requirements.txt` file: 
 
    ```bash
    cd the-directory-name-where-the-repo-is
